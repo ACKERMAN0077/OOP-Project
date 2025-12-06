@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.section2.sceneswitchdemo.FilterBookingController"
+            prefHeight="400.0" prefWidth="600.0">
+    <BorderPane prefHeight="700.0" prefWidth="1000.0">
+
+        <top>
+            <VBox prefHeight="55.0" prefWidth="955.0" spacing="10.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
+                <children>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="Resort PMS" />
+                            <TextField fx:id="searchField" promptText="Search Name, Room #, or Conf #" HBox.hgrow="ALWAYS" />
+                        </children>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button mnemonicParsing="false" onAction="#goToDashboard" text="BACK" />
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+        </top>
+
+        <center>
+            <TableView fx:id="bookingTable" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn fx:id="roomCol" text="Room #" />
+                    <TableColumn fx:id="guestCol" text="Guest Name" />
+                    <TableColumn fx:id="statusCol" text="Status" />
+                    <TableColumn fx:id="arrivalCol" text="Arrival" />
+                    <TableColumn fx:id="departCol" text="Depart" />
+                </columns>
+
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+        </center>
+
+    </BorderPane>
+</AnchorPane>

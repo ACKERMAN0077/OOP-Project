@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800" prefHeight="600">
+
+    <children>
+        <VBox spacing="16" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" style="-fx-padding:16;">
+
+            <!-- Header -->
+            <HBox spacing="12" prefHeight="56">
+                <children>
+                    <Label text="HOTEL" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <HBox spacing="12">
+                        <children>
+                            <Label text="Home"/>
+                            <Label text="About"/>
+                            <Label text="Rooms"/>
+                            <Label text="Contact"/>
+                        </children>
+                    </HBox>
+                </children>
+            </HBox>
+
+            <!-- Title -->
+            <Label text="Available Rooms" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+            <!-- Scrollable content -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                <content>
+                    <VBox spacing="12" style="-fx-padding:8;">
+                        <children>
+
+                            <!-- Room card (example) -->
+                            <HBox spacing="12" style="-fx-padding:12; -fx-background-radius:8;">
+                                <children>
+
+                                    <!-- Image uses classpath reference (@filename) -->
+                                    <ImageView fitWidth="160" fitHeight="120" preserveRatio="true">
+                                        <image>
+                                            <Image url="@room_placeholder.png"/>
+                                        </image>
+                                    </ImageView>
+
+                                    <VBox spacing="8">
+                                        <children>
+                                            <Label text="Deluxe Room" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+                                            <Label text="Spacious, AC, Wi-Fi, balcony." wrapText="true"/>
+                                            <Button text="Book Now"/>
+                                        </children>
+                                    </VBox>
+
+                                </children>
+                            </HBox>
+
+                            <!-- You can duplicate the HBox above for more rooms -->
+                        </children>
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+    </children>
+</AnchorPane>
