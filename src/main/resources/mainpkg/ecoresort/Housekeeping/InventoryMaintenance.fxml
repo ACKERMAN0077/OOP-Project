@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.ecoresort.Housekeeping.InventoryMaintenanceController">
+   <children>
+      <Label layoutX="200.0" layoutY="14.0" text="Inventory &amp; Maintenance">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="55.0" text="Room #" />
+      <ComboBox fx:id="roomCB" layoutX="80.0" layoutY="51.0" prefWidth="80.0" />
+      <Label layoutX="180.0" layoutY="55.0" text="Issue:" />
+      <TextField fx:id="issueTF" layoutX="220.0" layoutY="51.0" prefWidth="200.0" />
+      <Button layoutX="440.0" layoutY="51.0" mnemonicParsing="false" onAction="#reportMaintenanceOA" text="Report Issue" />
+      <Label layoutX="24.0" layoutY="95.0" text="Amenity:" />
+      <ComboBox fx:id="amenityCB" layoutX="80.0" layoutY="91.0" prefWidth="120.0" />
+      <Label layoutX="220.0" layoutY="95.0" text="Qty:" />
+      <TextField fx:id="qtyTF" layoutX="250.0" layoutY="91.0" prefWidth="60.0" />
+      <Button layoutX="330.0" layoutY="91.0" mnemonicParsing="false" onAction="#processAmenityOA" text="Process Request" />
+      <Button layoutX="470.0" layoutY="91.0" mnemonicParsing="false" onAction="#viewLowStockOA" text="Low Stock Alert" />
+      <Button layoutX="540.0" layoutY="14.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+      <Label layoutX="24.0" layoutY="135.0" text="Inventory Items:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="stockTV" layoutX="24.0" layoutY="155.0" prefHeight="100.0" prefWidth="550.0">
+        <columns>
+          <TableColumn fx:id="itemNameTC" prefWidth="150.0" text="Item Name" />
+          <TableColumn fx:id="quantityTC" prefWidth="100.0" text="Quantity" />
+          <TableColumn fx:id="reorderTC" prefWidth="100.0" text="Reorder Level" />
+          <TableColumn fx:id="categoryTC" prefWidth="100.0" text="Category" />
+        </columns>
+      </TableView>
+      <Label layoutX="24.0" layoutY="265.0" text="Maintenance Tickets:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ticketTV" layoutX="24.0" layoutY="285.0" prefHeight="100.0" prefWidth="550.0">
+        <columns>
+          <TableColumn fx:id="ticketIdTC" prefWidth="80.0" text="Ticket ID" />
+          <TableColumn fx:id="ticketRoomTC" prefWidth="80.0" text="Room #" />
+          <TableColumn fx:id="issueTC" prefWidth="180.0" text="Issue" />
+          <TableColumn fx:id="ticketStatusTC" prefWidth="100.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
